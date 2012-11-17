@@ -9,12 +9,7 @@ class Welcome extends Core_Controller {
 	
 	public function index()
 	{
-		
-		print_r($this->data);
 
-		$this->load->view('welcome_message');
+		$this->render_view('welcome_message');
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
