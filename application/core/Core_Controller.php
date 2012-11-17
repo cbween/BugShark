@@ -18,4 +18,10 @@ class Core_Controller extends CI_Controller
 		$this->load->view('templates/foot', $this->data);
 	
     }
+
+	public function logged_in()
+	{
+		return $this->user_model->is_logged_in();
+	}
+
 }

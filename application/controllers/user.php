@@ -26,20 +26,24 @@ class User extends Core_Controller {
 	
 	public function register()
 	{	
-		$this->data->registration = new stdClass();
-		$this->data->registration = (object) $this->input->post(null, true);
-		
+		$this->data->registration = false;
+		$this->data->registration = $this->input->post(null, true);
+
 		// There is no registration post object. 
-		if ( !empty( $this->data->registration ) ) {
+		if ( $this->data->registration ) {
+			
+			$this->data->registration = (object) $this->data->registration;
+			
 			if ( $this->data->registration->password === $this->data->registration->confirm_password ) {
-				
+
 				// Use the model to register our user. 
 				if ( !$this->user_model->register($this->data->registration) ) {
-					redirect( base_url()."account/login" );
+					// if false
+					redirect( base_url()."user/login" );
 				}
 				
 				// Worked? Log me in!
-				if ( $this->_validateLogin(array("email"=>$this->data->registration->username, "password"=>$this->data->registration->password)) ) {
+				if ( $this->_validateLogin(array("username"=>$this->data->registration->username, "password"=>$this->data->registration->password)) ) {
 					redirect( base_url() );
 				}
 			} else {
@@ -47,7 +51,7 @@ class User extends Core_Controller {
 			}
 		}
 		
-		$this->render_view('account/register', $this->data);
+		$this->render_view('user/register', $this->data);
 	}
 	
 	/**

@@ -94,6 +94,7 @@ class User_model extends Core_Model
 		$this->load->helper('hashPassword');
 		$passwordHash = $this->hashPassword($registration->password);
 		
+		if ( !isset($registration->username) ) { return false; }
 		if ( !isset($registration->email) ) { return false; }
 		if ( !isset($registration->fname) ) { return false; }
 		if ( !isset($registration->lname) ) { return false; }
@@ -109,14 +110,15 @@ class User_model extends Core_Model
 			"created"=>$time,
 			"modified"=>$time,
 			"last_login"=>NULL,
-			"status"=>"t",
+			"username"=>$registration->username,
 			"email"=>$registration->email,
-			"fname"=>$registration->fname,
-			"lname"=>$registration->lname,
+			"firstname"=>$registration->fname,
+			"lastname"=>$registration->lname,
 			"address"=>$registration->address,
 			"city"=>$registration->city,
 			"state"=>$registration->state,
 			"zip"=>$registration->zip,
+			"verified"=>"1",
 			"password"=>$passwordHash
 		);
 		
