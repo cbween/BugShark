@@ -9,12 +9,11 @@
         }
         if (params.bugshark == 'true') {
             var prefix = document.location.protocol == 'https:' ? 'https://' : 'http://'
-            document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/static/js/vendor/underscore.js"></scri' + 'pt>')
-            document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/static/js/vendor/jquery-1.8.2.min.js"></scri' + 'pt>')
-            document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/static/js/vendor/mustache.js"></scri' + 'pt>')
-            document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/static/js/vendor/backbone.js"></scri' + 'pt>')
             document.write('<link rel="stylesheet" type="text/css" href="' + prefix + '127.0.0.1/bugshark.css"/>')
-            document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/bugshark.js"></scri' + 'pt>')
+            var scripts = ['static/js/vendor/underscore', 'static/js/vendor/jquery-1.8.2.min', 'static/js/vendor/mustache', 'static/js/vendor/backbone', 'bugshark']
+            for (var i = 0; i < scripts.length; i++) {
+                document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/' + scripts[i] + '.js"></scri' + 'pt>')
+            }
         }
     })()
 </script>
