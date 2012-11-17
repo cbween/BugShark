@@ -25,7 +25,7 @@
     </div>
 
     <div id="navbar">
-
+		<?php  $this->load->view('templates/navigation'); ?>
     </div>
 
     <div id="body">

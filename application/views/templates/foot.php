@@ -1,6 +1,6 @@
 
 <pre>
-	<?php print_r($user); ?>
+	<?php print_r($this->data); ?>
 </pre>
 
 </div>

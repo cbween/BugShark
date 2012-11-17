@@ -1,5 +1,9 @@
 <form action="<?php echo current_url(); ?>" method="post" class="form">
 	<div class="formRow">
+		<label>Username</label>
+		<input type="text" id="username" class="textInput" name="username" placeholder="" value="" />
+	</div>
+	<div class="formRow">
 		<label>Email Address</label>
 		<input type="text" id="email" class="textInput" name="email" placeholder="bill@windowsrulez1337.com" value="" />
 	</div>
