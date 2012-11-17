@@ -9,7 +9,8 @@
         }
         if (params.bugshark == 'true') {
             var protocol = document.location.protocol == 'https:' ? 'https' : 'http'
-            document.write('<script type="text/javascript" src="' + protocol + '://bugshark.com/static/bugshark.js"></scri' + 'pt>')
+            document.write('<script type="text/javascript" src="' + protocol + '://bugshark.com/bugshark.js"></scri' + 'pt>')
+            document.write('<link rel="stylesheet" type="text/css" href="' + protocol + '://bugshark.com/bugshark.css"/>')
         }
     })()
 </script>
