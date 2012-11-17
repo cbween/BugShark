@@ -8,75 +8,9 @@ html {
     background: #fafafa;
 }
 
-#wrapper {
-    width: 948px;
-    margin: 0 auto;
-    text-align: left;
-    border: 1px solid #000;
-    border-top: none;
-    padding: 20px 10px;
-    background: #fff;
-}
 
-
-
-span.anchor {
-    cursor: pointer;
-    text-decoration: underline;
-    color: blue;
-}
-
-
-.page-edit .tabs > ul { 
-    margin: 0;
-    padding: 0;
-}
-
-.page-edit .tabs > ul li {
-    display: inline;
-    border: 1px solid #e8eeeb;
-    background: #ccc;
-    padding: 5px 20px;
-    border-bottom: 0;
-}
-
-.page-edit .tabs > ul li.active {
-    background: #e8eeeb;
-}
-.page-edit .tabs > div {
-    background: #e8eeeb;
-    padding: 10px 20px;
-}
-
-
-.table-list table {
-    width: 100%;
+pre {
     text-align: left;
 }
-
-.table-list table td {
-    border-bottom: 1px solid #ccc;
-}
-
-.table-list table td p.title {
-    display: inline-block;
-    width: 300px;
-    
-}
-
-.tabs > div {
-    display: none;
-}
-
-.tabs > div.active {
-    display: block;
-}
-
-.tabs span.anchor.active {
-    font-weight: bold;
-}
-
-
-
 
 @import url('boilerplate-end.css');
