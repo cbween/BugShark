@@ -1,0 +1,13 @@
+#bugshark-toolbar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 24px;
+    background: black;
+    color: white;
+}
+
+#bugshark-toolbar .content {
+    display: none;
+}
