@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = '174.127.126.211';
+$db['default']['username'] = 'bugsha_siteUser';
+$db['default']['password'] = ']7{[T+PZ%sAw';
+$db['default']['database'] = 'bugsha_site';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

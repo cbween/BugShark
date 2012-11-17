@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+date_default_timezone_set("America/Los_Angeles");
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= "/";
 
 /*
 |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ $config['enable_hooks'] = FALSE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'Core_';
 
 
 /*
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'Kjhdf9hKJSH098hhcvK52kjh4r3hkjSD';
 
 /*
 |--------------------------------------------------------------------------
