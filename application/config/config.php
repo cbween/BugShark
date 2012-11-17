@@ -1,5 +1,9 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 date_default_timezone_set("America/Los_Angeles");
+
+ini_set('display_errors',1);
+error_reporting (E_ALL);
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

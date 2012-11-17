@@ -20,3 +20,8 @@
         }
     }
 }());
+
+
+(function($) {
+	$(".datepicker").datepicker();
+})(this.jQuery);
