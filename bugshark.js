@@ -110,7 +110,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
         }
     },
 
-    headingClick: function() {
+    headingClick: function(e) {
+        e.preventDefault()
         if (!this.expanded) {
             this._expand()
         } else {
