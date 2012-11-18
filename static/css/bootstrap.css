@@ -1281,6 +1281,8 @@
 #video-play {
     width: 350px;
     height: 350px;
+    margin: 0 125px;
     cursor: pointer;
-    background-image: url(/static/images/play.png);
+    background: url(/static/images/play.png) no-repeat;
+    background-size: contain;
 }
