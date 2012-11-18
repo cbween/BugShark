@@ -1,4 +1,4 @@
-    	<iframe width="600" height="338" src="http://www.youtube.com/embed/9bZkp7q19f0?rel=0" frameborder="0" allowfullscreen></iframe>
+    	<iframe width="600" height="338" src="" frameborder="0" allowfullscreen></iframe>
     	<div class="hero-unit">
         <h1>We make bug reporting fun again.</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
