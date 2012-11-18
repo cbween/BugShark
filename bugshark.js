@@ -158,6 +158,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
     _sendFeedback: function(data) {
         // http://stackoverflow.com/a/6169703/104184
 
+        data['url'] = location.href
+
         var iframe = document.createElement('iframe')
         var name = 'secretForm'
         document.body.appendChild(iframe)
