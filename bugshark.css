@@ -1,10 +1,19 @@
+body {
+    height: 100%;
+    margin: 0;
+    /*overflow: hidden;*/
+}
+
+
 #bugshark-toolbar {
     width: 100px;
-    height: 22px;
-    padding: 5px;
+    height: 20px;
+    padding: 10px 15px;
+    border-top: 1px solid #788db2;
+    border-left: 1px solid #788db2;
 
-    background: black;
-    color: white;
+    background: #bddcff;
+    font-family: Arial, sans-serif;
     line-height: 1;
 
     position: absolute;
@@ -16,7 +25,7 @@
 
 #bugshark-toolbar .heading {
     font-size: 18px;
-    padding: 2px 0 7px;
+    padding: 2px 0 10px;
     text-align: center;
 
     cursor: pointer;
@@ -26,6 +35,66 @@
 #bugshark-toolbar .content {
 }
 
-#bugshark-toolbar textarea {
-    width: 195px;
+#bugshark-toolbar .message {
+    display: none;
+    text-align: center;
+
+    width: 200px;
+    font-size: 15px;
+    padding: 3px 0;
+    margin-bottom: 5px;
+
+    background: #fffd6f;
+}
+
+#bugshark-toolbar .feedback {
+    width: 194px;
+    height: 120px;
+    padding: 2px;
+    border: 1px solid #9ac2ff;
+
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+
+    overflow: auto;
+    resize: none;
+}
+
+#bugshark-toolbar .feedback:focus {
+    border: 1px solid #799dff;
+}
+
+#bugshark-toolbar .tools {
+}
+
+#bugshark-toolbar .tool {
+}
+
+#bugshark-toolbar .tool.highlight .icon {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #788db2;
+}
+
+#bugshark-toolbar .submit {
+    width: 200px;
+    padding: 4px 0;
+    margin-top: 10px;
+
+    background: #76aaff;
+    border: 1px solid #788db2;
+}
+
+#bugshark-toolbar .clearfix {
+    clear: both;
+}
+
+
+#bugshark-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #cccccc;
 }
