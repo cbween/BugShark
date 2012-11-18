@@ -1,6 +1,6 @@
     	<style>
     	body {
-    	background-image: url(<? echo base_url(); ?>static/images/logo.png);
+    	background-image: url(<? echo base_url(); ?>static/images/logo.jpg);
     	background-repeat: no-repeat;
     	background-attachment: fixed;
     	background-position: left top;
