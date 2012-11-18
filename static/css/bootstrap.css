@@ -15,6 +15,10 @@
 	color: #505050;
 }
 
+#bodytext {
+	background-color: #FFF;
+}
+
 .row h2 {
 	color: #383838;
 }
@@ -48,13 +52,6 @@
   box-sizing: border-box;
 }
 
-.bg-img {
-	float: middle;
-	z-index: 1;
-	margin-top: -50px;
-	margin-left: -500
-	
-}
 .btn-group {
   position: relative;
   font-size: 0;
@@ -1220,8 +1217,4 @@
   color: #ffffff;
   background-color: #040404;
   *background-color: #000000;
-}
-.navbar-inverse .btn-navbar:active,
-.navbar-inverse .btn-navbar.active {
-  background-color: #000000 \9;
 }

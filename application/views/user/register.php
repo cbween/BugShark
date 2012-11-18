@@ -59,6 +59,6 @@
 		<input type="password" id="confirm_password" class="textInput" name="confirm_password" value="" />
 	</div>
 	<div class="formRow">
-		<input type="submit" id="submit" class="submit" name="register" value="Register" />
+		<input type="submit" id="submit" class="btn btn-primary" name="register" value="Register" />
 	</div>
 </form>

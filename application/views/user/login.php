@@ -10,7 +10,7 @@
 	</dl>
 	<dl>
 		<dt></dt>
-		<dd><input type="submit" name="submit" class="submit" id="submit" value="Login" /></dd>
+		<dd><input type="submit" name="submit" class="btn btn-primary" id="submit" value="Login" /></dd>
 	</dl>
 	<input type="hidden" name="redirect" value="<?php echo (!empty($_GET['redirect'])) ? htmlspecialchars($_GET['redirect']) : ''; ?>" />
 </form>
