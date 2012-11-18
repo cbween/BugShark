@@ -17,5 +17,9 @@
 	<hr style="color: #888888;">
 		<p style="font-size:13px; color: #888888;">Copyright 2012, BugShark</p>
 </footer>
+    <script>
+	var offset = $(window).height() - $('#top').height();
+	$('.row').css({'margin-top':offset});
+    </script>
 </html>
 

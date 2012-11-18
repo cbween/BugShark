@@ -46,6 +46,11 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.bg img {
+	z-index: 1;
+	
+}
 .btn-group {
   position: relative;
   font-size: 0;
