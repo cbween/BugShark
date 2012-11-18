@@ -9,7 +9,7 @@
 				<p><?php echo $p->comments; ?></p>
 		
 				<?php if ( isset($p->screenshot) && trim($p->screenshot) != "" ) : ?>
-					<img width="500px" height="300" src="data:image/png;base64,<?php echo $p->screenshot; ?>" />
+					<img class="sc" width="500px" height="300" src="data:image/png;base64,<?php echo $p->screenshot; ?>" />
 				<?php endif; ?>
 		
 				<h5>Details:</h5>
