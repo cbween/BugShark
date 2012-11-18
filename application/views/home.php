@@ -27,3 +27,4 @@
           <p>Not single browser contains all your bugs, so why should BugShark be limited? BugShark works in all major browsers.</p>
         </div>
         <p><a href="#" style="text-align:center;" class="btn btn-primary">Go Back Up</a></p>
+
