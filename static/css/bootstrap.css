@@ -1248,8 +1248,33 @@
     
 }
 
+.ui-accordion-header-icon {
+    display: none !important;
+}
+
+.accordion h3 {
+    padding: 5px 10px;
+}
+
 .hudDisplay tbody td {
     border: 1px solid #e0dfdf;
     padding: 10px 3px;
+}
+.accordion, .accordion div {
+    overflow: auto;
+}
+
+.report-row {
+    border-bottom: 1px solid #000;
+    
+    font-size: 12px;
+    overflow: auto;
+
+    margin: 0 20px 10px 20px !important;
+    padding-bottom: 10px;
+}
+
+.report-row .sc {
+    border: 1px solid #000;
 }
 
