@@ -29,6 +29,21 @@ body {
     padding: 10px;
 }
 
+#bugshark-toolbar .message {
+    display: none;
+    text-align: center;
+
+    width: 150px;
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 5px;
+
+    background: #fffd6f;
+
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
 #bugshark-toolbar .top a
 {
     background: url(static/images/sharkfin.png) bottom left no-repeat;

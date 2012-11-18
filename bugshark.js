@@ -52,6 +52,7 @@ BugShark.templates = {
                 '<a class="heading" href="#">Shark It!</a>' +
             '</div>' +
             '<div class="body">' +
+                '<div class="message"></div>' +
                 '<div class="feedbackconter">' +
                     '<textarea class="feedback" placeholder="Enter your feedback here"></textarea>' +
                     '<input class="email" type="text" placeholder="Your email (optional)"/>' +
@@ -176,6 +177,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
         $(document.body).html2canvas({
             onrendered: function(canvas) {
                 var pngData = canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, '')
+                console.log(pngData)
                 screenshotInput.value = pngData
 
                 document.body.appendChild(form)
@@ -218,7 +220,9 @@ BugShark.views.Overlay = Backbone.View.extend({
     },
     hide: function() {
         this.$el.hide()
-        this.jCrop.destroy()
+        if (this.jCrop) {
+            this.jCrop.destroy()
+        }
         this.displayed = false
     },
 
