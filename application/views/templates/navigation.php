@@ -11,7 +11,6 @@
             <ul class="nav">
               <?php if ( Core_Controller::logged_in() ) : ?>
 			<li><a href="<?php echo base_url(); ?>sitemanager/">My Sites</a></li>
-			<li><a href="<?php echo base_url(); ?>reports/">My Reports</a></li>
 			<li><a href="<?php echo base_url(); ?>user/logout">Logout</a></li>
 		<?php else: ?>
 			<li><a class="reg" href="<?php echo base_url(); ?>user/register">Register</a></li>
