@@ -28,7 +28,7 @@ class Testies extends Core_Controller {	// Remember to cup gently
 		$post = $this->input->post(null, true);
 		
 		$this->_validateInitial($post);
-		$this->bug_module->save($post);
+		$this->bug_model->save($post);
 	}
 	
 	private function _validateInitial($post = false)
