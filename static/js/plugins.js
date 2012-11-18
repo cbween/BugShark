@@ -24,4 +24,5 @@
 
 (function($) {
 	$(".datepicker").datepicker();
+//	$(".accordion").accordion({collapsible: true, header: "h3", active:false});
 })(this.jQuery);

@@ -7,6 +7,7 @@ class Reports extends Core_Controller {	// Remember to cup gently
 		
 		$this->load->model("report_model");
 		$this->load->model("site_model");
+		$this->load->model("bug_model");
 	}
 	
 	public function index()
@@ -19,7 +20,24 @@ class Reports extends Core_Controller {	// Remember to cup gently
 	{
 		if ( !$track_id ) { redirect(base_url().'reports'); }
 		
-		$this->data->bugs = $this->report_model->getSite($track_id);
+		$bugs = $this->report_model->getSite($track_id);
+		$organizedBugs = array();
+		
+		foreach ( $bugs as $bug ) {
+			$organizedBugs[urlencode($bug->url)][] = $bug;
+		}
+		
+		$this->data->bugs = $organizedBugs;
 		$this->render_view('reports/siteReport.php');
+	}
+	
+	public function imgCapture($id) {
+		
+		$bug = $this->bug_model->get($id);
+		
+		header("Content-type: image/png");
+		echo 'data:image/png;base64,' . $bug->screenshot;
+		
+		exit;
 	}
 }
