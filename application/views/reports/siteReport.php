@@ -15,7 +15,7 @@
 				<h5>Details:</h5>
 				<ul>
 					<li>Category: <?php echo $p->type; ?></li>
-					<li>URL: <a href="<?php echo $p->url; ?>"><?php echo $p->url; ?></a></li>
+					<li>URL: <a href="<?php echo urldecode($p->url); ?>"><?php echo $p->url; ?></a></li>
 				</ul>
 			</div>
 			<?php endforeach; ?>
