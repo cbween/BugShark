@@ -15,6 +15,7 @@ class Bug_model extends Core_Model
 			"url"=>urlencode($form["url"]),
 			"type"=>$form["type"],
 			"comments"=>$form["comments"],
+			"screenshot"=>$form["screenshot"],
 			"log"=>json_encode($form["log"])
 		);
 		

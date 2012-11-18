@@ -164,18 +164,32 @@ BugShark.views.ToolBar = Backbone.View.extend({
         form.method = 'POST'
 
         _.each(data, function(value, key) {
-            var input = document.createElement("input")
+            var input = document.createElement('input')
             input.type = 'hidden'
             input.name = key
             input.value = value
             form.appendChild(input)
         })
 
-        document.body.appendChild(form)
-//        form.submit()
+        var screenshotInput = document.createElement('input')
+        screenshotInput.type = 'hidden'
+        screenshotInput.name = 'screenshot'
+        form.appendChild(screenshotInput)
 
-        this.$el.find('textarea').val('')
-        this.$el.find('.message').text('Thank you! Your feedback is appreciated.').fadeIn().delay(3000).fadeOut()
+        // Take the screenshot
+        var el = this.$el
+        $(document.body).html2canvas({
+            onrendered: function(canvas) {
+                var pngData = canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, '')
+                screenshotInput.value = pngData
+
+                document.body.appendChild(form)
+                form.submit()
+
+                el.find('textarea').val('')
+                el.find('.message').text('Thank you! Your feedback is appreciated.').fadeIn().delay(3000).fadeOut()
+            }
+        })
     }
 })
 
@@ -196,7 +210,10 @@ BugShark.views.Overlay = Backbone.View.extend({
         this.$el.show()
         this.displayed = true
         this._resize()
-        this.$el.Jcrop()
+        this.$el.Jcrop({
+            allowResize: false,
+            allowMove: false
+        })
     },
     hide: function() {
         this.$el.hide()
