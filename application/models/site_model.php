@@ -18,6 +18,11 @@ class Site_model extends Core_Model
     {
 		return $this->db->get_where('sites', array("id"=>$id))->row();
     }
+
+	public function getByTrack($track_id)
+	{
+		return $this->db->get_where("sites", array("track_id"=>$track_id))->row();
+	}
 	
 	public function get_where($where = array()) 
 	{
