@@ -48,8 +48,11 @@
   box-sizing: border-box;
 }
 
-.bg img {
+.bg-img {
+	float: middle;
 	z-index: 1;
+	margin-top: -50px;
+	margin-left: -500
 	
 }
 .btn-group {
