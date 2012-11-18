@@ -97,7 +97,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
     events: {
         'click .heading': 'headingClick',
         'click .submit': 'submit',
-        'click .tool.highlight': 'startHighlight'
+        'click .tool.highlight': 'highlightClick'
     },
 
     initialize: function() {
@@ -126,8 +126,13 @@ BugShark.views.ToolBar = Backbone.View.extend({
         this._sendFeedback(data)
     },
 
-    startHighlight: function() {
-        BugShark.overlay.show()
+    highlightClick: function(e) {
+        e.preventDefault()
+        if (BugShark.overlay.displayed) {
+            BugShark.overlay.hide()
+        } else {
+            BugShark.overlay.show()
+        }
     },
 
     _expand: function() {
@@ -224,11 +229,12 @@ BugShark.views.Overlay = Backbone.View.extend({
     hide: function() {
         this.$el.hide()
         this.jCrop.destroy()
+        this.displayed = false
     },
 
     _resize: function() {
         if (this.displayed) {
-            var $window = $(window)
+            var $window = $(document.body)
             this.$el.width($window.width() - 2)
             this.$el.height($window.height() - 2)
         }
