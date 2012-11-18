@@ -97,7 +97,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
     events: {
         'click .heading': 'headingClick',
         'click .submit': 'submit',
-        'click .tool.highlight': 'startHighlight'
+        'click .tool.highlight': 'highlightClick'
     },
 
     initialize: function() {
@@ -110,7 +110,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
         }
     },
 
-    headingClick: function() {
+    headingClick: function(e) {
+        e.preventDefault()
         if (!this.expanded) {
             this._expand()
         } else {
@@ -126,8 +127,13 @@ BugShark.views.ToolBar = Backbone.View.extend({
         this._sendFeedback(data)
     },
 
-    startHighlight: function() {
-        BugShark.overlay.show()
+    highlightClick: function(e) {
+        e.preventDefault()
+        if (BugShark.overlay.displayed) {
+            BugShark.overlay.hide()
+        } else {
+            BugShark.overlay.show()
+        }
     },
 
     _expand: function() {
@@ -151,6 +157,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
 
     _sendFeedback: function(data) {
         // http://stackoverflow.com/a/6169703/104184
+
+        data['url'] = location.href
 
         var iframe = document.createElement('iframe')
         var name = 'secretForm'
@@ -224,11 +232,12 @@ BugShark.views.Overlay = Backbone.View.extend({
     hide: function() {
         this.$el.hide()
         this.jCrop.destroy()
+        this.displayed = false
     },
 
     _resize: function() {
         if (this.displayed) {
-            var $window = $(window)
+            var $window = $(document.body)
             this.$el.width($window.width() - 2)
             this.$el.height($window.height() - 2)
         }

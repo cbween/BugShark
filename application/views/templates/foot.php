@@ -12,7 +12,19 @@
 </script>
 <script src="<?php echo base_url(); ?>static/js/main.js"></script>
 <!-- Example row of columns -->
-</body>
+  <script type="text/javascript">
+(function() {
+            var prefix = document.location.protocol == 'https:' ? 'https://' : 'http://'
+        var dump = '<link rel="stylesheet" type="text/css" href="' + prefix + 'bugshark.com/bugshark.css"/>'
+        var scripts = ['static/js/vendor/underscore', 'static/js/vendor/jquery-1.8.2.min', 'static/js/vendor/mustache', 'static/js/vendor/backbone', 'static/js/vendor/jquery.Jcrop.min', 'static/js/vendor/html2canvas.min', 'static/js/vendor/jquery.plugin.html2canvas', 'bugshark']
+        for (var j = 0; j < scripts.length; j++) {
+            dump += '<script type="text/javascript" src="' + prefix + 'bugshark.com/' + scripts[j] + '.js"></scri' + 'pt>'
+        }
+        dump += '<script type="text/javascript">BugShark.track_id = "0cdcfff"</scri' + 'pt>'
+        document.write(dump)
+
+})()
+</script>
 <footer>
 	<hr style="color: #888888;">
 		<p style="font-size:13px; color: #888888;">Copyright 2012, BugShark</p>
@@ -21,5 +33,7 @@
 	var offset = $(window).height() - $('#top').height();
 	$('.row').css({'margin-top':offset});
     </script>
-</html>
+</body>
+
+            </html>
 
