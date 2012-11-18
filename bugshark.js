@@ -61,19 +61,26 @@ BugShark.collections = {}
 BugShark.templates = {
     toolbar:
         '<div id="bugshark-toolbar">' +
-            '<div class="heading">Feedback</div>' +
-            '<div class="message"></div>' +
-            '<div class="content">' +
-                '<textarea class="feedback" placeholder="Enter your feedback here"></textarea>' +
-                '<div class="tools">' +
-                    '<div class="tool highlight">' +
-                        '<div class="icon"></div><span class="label">Highlight</span>' +
-                        '<div class="clearfix"></div>' +
-                    '</div>' +
-                '</div>' +
-                '<input class="submit" type="submit" value="Send Feedback"/>' +
-            '</div>' +
-        '</div>',
+            '<div class="top">' +
+    '<a class="heading" href="#">Shark It!</a>' +
+    '</div>' +
+    '<div class="body">' +
+    '<div class="feedbackconter">' +
+        '<textarea class="feedback" placeholder="type here."></textarea>' +
+    '</div>' +
+            '<ul>' +
+            '<li class="tools">' +
+            '<p class="title">Tools:</p>' +
+            '<ul>' +
+            '<li><a class="tool highlight" href="#"><span class="icon-hl"></span> highlight</a></li>' +
+            '</ul>' +
+            '</li>' +
+            '</ul>' +
+    '<div>' +
+        '<input class="submit" type="submit" value="Send Feedback" />' +
+    '</div>' +
+'</div>' +
+'</div>',
 
     overlay:
         '<div id="bugshark-overlay"></div>'
@@ -83,10 +90,8 @@ BugShark.templates = {
 BugShark.views = {}
 
 BugShark.views.ToolBar = Backbone.View.extend({
-    collapsedWidth: 0,
-    collapsedHeight: 0,
-    expandedWidth: 200,
-    expandedHeight: 260,
+    collapsedBottom: -300,
+    expandedBottom: 0,
     expanded: false,
 
     events: {
@@ -99,11 +104,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
         var el = $(BugShark.utils.renderTemplate('toolbar')).get(0)
         document.body.appendChild(el)
         this.setElement(el)
-        this.collapsedWidth = this.$el.width()
-        this.collapsedHeight = this.$el.height()
         if (BugShark.utils.getCookie('bugshark-toolbar-expanded')) {
-            this.$el.width(this.expandedWidth)
-            this.$el.height(this.expandedHeight)
+            this.$el.css('bottom', this.expandedBottom)
             this.expanded = true
         }
     },
@@ -133,8 +135,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
         this.expanded = true
         var el = this.$el;
         el.animate({
-            width: this.expandedWidth,
-            height: this.expandedHeight,
+            bottom: this.expandedBottom,
             complete: function() {
                 el.find('.feedback').focus()
             }
@@ -144,8 +145,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
         BugShark.utils.removeCookie('bugshark-toolbar-expanded')
         this.expanded = false
         this.$el.animate({
-            width: this.collapsedWidth,
-            height: this.collapsedHeight
+            bottom: this.collapsedBottom
         })
     },
 
