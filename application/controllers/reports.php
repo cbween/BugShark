@@ -6,6 +6,7 @@ class Reports extends Core_Controller {	// Remember to cup gently
 		parent::__construct();
 		
 		$this->load->model("report_model");
+		$this->load->model("site_model");
 	}
 	
 	public function index()
