@@ -215,7 +215,8 @@ BugShark.views.Overlay = Backbone.View.extend({
         var self = this
         this.$el.Jcrop({
             allowResize: false,
-            allowMove: false
+            allowMove: false,
+            bgOpacity: 0.4
         }, function() {
             self.jCrop = this
         })
