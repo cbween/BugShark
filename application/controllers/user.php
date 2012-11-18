@@ -6,7 +6,6 @@ class User extends Core_Controller {
     {
         parent::__construct();
 		$this->load->model("user_model");
-		
     }
 
     public function index()
@@ -44,7 +43,7 @@ class User extends Core_Controller {
 				
 				// Worked? Log me in!
 				if ( $this->_validateLogin(array("username"=>$this->data->registration->username, "password"=>$this->data->registration->password)) ) {
-					redirect( base_url() );
+					redirect( base_url().'sitemanager' );
 				}
 			} else {
 				$this->session->set_flashdata('notify', 'Your Passwords must match.');
@@ -79,11 +78,11 @@ class User extends Core_Controller {
 			$this->session->set_userdata($this->user->user);
 			
 			// Check for that redirect var!
-			if ( isset($form['redirect']) ) {
-				redirect($form['redirect']);
-			}
+			// if ( isset($form['redirect']) ) {
+			// 	redirect($form['redirect']);
+			// }
 			
-			redirect(base_url());
+			redirect(base_url().'sitemanager');
 		}
 
 		// if we got here then the username and/or password didn't match

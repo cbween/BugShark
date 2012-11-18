@@ -10,13 +10,17 @@ class Sitemanager extends Core_Controller {
 	public function index()
 	{
 		$this->data->sites = $this->site_model->listAccount();
-		$this->render_view('sites/list');
+		
+		if ( empty($this->data->sites) ) {
+			$this->render_view('sites/listTutorial');
+		} else {
+			$this->render_view('sites/list');
+		}
 	}
 	
 	public function details($id = false)
 	{
 		if ( !$id ) { retirect(base_url().'sitemanager'); }
-		
 		
 		$this->data->site = $this->site_model->get($id);
 		$this->render_view('sites/detail');
