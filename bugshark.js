@@ -47,6 +47,10 @@ BugShark.utils = {
  */
 BugShark.models = {}
 
+BugShark.models.Feedback = Backbone.Model.extend({
+    //
+})
+
 
 BugShark.collections = {}
 
@@ -58,10 +62,21 @@ BugShark.templates = {
     toolbar:
         '<div id="bugshark-toolbar">' +
             '<div class="heading">Feedback</div>' +
+            '<div class="message"></div>' +
             '<div class="content">' +
-                '<textarea></textarea>' +
+                '<textarea class="feedback" placeholder="Enter your feedback here"></textarea>' +
+                '<div class="tools">' +
+                    '<div class="tool highlight">' +
+                        '<div class="icon"></div><span class="label">Highlight</span>' +
+                        '<div class="clearfix"></div>' +
+                    '</div>' +
+                '</div>' +
+                '<input class="submit" type="submit" value="Send Feedback"/>' +
             '</div>' +
-        '</div>'
+        '</div>',
+
+    overlay:
+        '<div id="bugshark-overlay"></div>'
 }
 
 
@@ -75,11 +90,13 @@ BugShark.views.ToolBar = Backbone.View.extend({
     expanded: false,
 
     events: {
-        'click .heading': 'headingClick'
+        'click .heading': 'headingClick',
+        'click .submit': 'submit',
+        'click .tool.highlight': 'startHighlight'
     },
 
     initialize: function() {
-        var el = $(BugShark.utils.renderTemplate('toolbar'))[0]
+        var el = $(BugShark.utils.renderTemplate('toolbar')).get(0)
         document.body.appendChild(el)
         this.setElement(el)
         this.collapsedWidth = this.$el.width()
@@ -91,7 +108,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
         }
     },
 
-    headingClick: function(e) {
+    headingClick: function() {
         if (!this.expanded) {
             this._expand()
         } else {
@@ -99,12 +116,28 @@ BugShark.views.ToolBar = Backbone.View.extend({
         }
     },
 
+    submit: function() {
+        var data = {
+            comments: this.$el.find('.feedback').val(),
+            track_id: BugShark.track_id
+        }
+        this._sendFeedback(data)
+    },
+
+    startHighlight: function() {
+        BugShark.overlay.show()
+    },
+
     _expand: function() {
         BugShark.utils.setCookie('bugshark-toolbar-expanded', 'true')
         this.expanded = true
-        this.$el.animate({
+        var el = this.$el;
+        el.animate({
             width: this.expandedWidth,
-            height: this.expandedHeight
+            height: this.expandedHeight,
+            complete: function() {
+                el.find('.feedback').focus()
+            }
         })
     },
     _collapse: function() {
@@ -114,7 +147,69 @@ BugShark.views.ToolBar = Backbone.View.extend({
             width: this.collapsedWidth,
             height: this.collapsedHeight
         })
+    },
+
+    _sendFeedback: function(data) {
+        // http://stackoverflow.com/a/6169703/104184
+
+        var iframe = document.createElement('iframe')
+        var name = 'secretForm'
+        document.body.appendChild(iframe)
+        iframe.style.display = 'none'
+        iframe.contentWindow.name = name
+
+        var form = document.createElement('form')
+        form.target = name
+        form.action = 'http://bugshark.com/testies/s'
+        form.method = 'POST'
+
+        _.each(data, function(value, key) {
+            var input = document.createElement("input")
+            input.type = 'hidden'
+            input.name = key
+            input.value = value
+            form.appendChild(input)
+        })
+
+        document.body.appendChild(form)
+//        form.submit()
+
+        this.$el.find('textarea').val('')
+        this.$el.find('.message').text('Thank you! Your feedback is appreciated.').fadeIn().delay(3000).fadeOut()
+    }
+})
+
+BugShark.views.Overlay = Backbone.View.extend({
+    displayed: false,
+
+    initialize: function() {
+        var el = $(BugShark.utils.renderTemplate('overlay')).get(0)
+        document.body.appendChild(el)
+        this.setElement(el)
+        var self = this
+        $(window).resize(function() {
+            self._resize()
+        })
+    },
+
+    show: function() {
+        this.$el.show()
+        this.displayed = true
+        this._resize()
+        this.$el.Jcrop()
+    },
+    hide: function() {
+        this.$el.hide()
+    },
+
+    _resize: function() {
+        if (this.displayed) {
+            var $window = $(window)
+            this.$el.width($window.width() - 2)
+            this.$el.height($window.height() - 2)
+        }
     }
 })
 
 BugShark.toolbar = new BugShark.views.ToolBar()
+BugShark.overlay = new BugShark.views.Overlay()
