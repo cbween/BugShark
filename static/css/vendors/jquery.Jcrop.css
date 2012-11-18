@@ -14,7 +14,7 @@
   text-align: left;
     opacity: 0.5;
     z-index: 10000;
-    position: absolute;
+    position: absolute!important;
 }
 
 /* These styles define the border lines */
