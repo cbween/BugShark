@@ -6,7 +6,7 @@
     	background-position: left top;
     	}
     	</style>
-    	<iframe width="600" height="338" src="" frameborder="0" allowfullscreen></iframe>
+    	<iframe src="http://player.vimeo.com/video/VIDEO_ID" width="600" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
     	<div class="hero-unit">
         <h1>Bug reporting made easy.</h1>
         <p>Bug Shark provides visual on-site feedback tools to a crowdsourced network of developers, UX/UI designers and content editing experts (Sharks) to improve your quality assurance.</p>

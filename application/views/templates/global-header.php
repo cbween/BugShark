@@ -7,6 +7,9 @@
 
 	<link href="<?php echo base_url(); ?>static/css/bootstrap.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>static/css/vendors/jquery-ui-1.9.1.custom.min.css" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="<?php echo base_url(); ?>static/images/favicon.ico">
 
     <style type="text/css">
       body {
