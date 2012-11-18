@@ -200,7 +200,7 @@ BugShark.views.Overlay = Backbone.View.extend({
 
     initialize: function() {
         var el = $(BugShark.utils.renderTemplate('overlay')).get(0)
-        document.body.appendChild(el)
+        $(document.body).prepend(el)
         this.setElement(el)
         var self = this
         $(window).resize(function() {
