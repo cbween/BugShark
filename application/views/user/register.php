@@ -1,3 +1,4 @@
+<link src="<?php echo base_url(); ?>static/css/bootstrap.css" rel="stylesheet">
 <form action="<?php echo current_url(); ?>" method="post" class="form">
 	<div class="formRow">
 		<label>Username</label>

@@ -1,3 +1,3 @@
-<?php $this->load->view("global-header"); ?>
-	<?php $this->load->view("navigation"); ?>
+<?php $this->load->view("templates/global-header"); ?>
+	<?php $this->load->view("templates/navigation"); ?>
     <div class="container">

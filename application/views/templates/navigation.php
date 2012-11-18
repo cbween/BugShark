@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#"><img src="<?php echo base_url(); ?>static/images/logo.png" width="30px" height="20px">BugShark</a>
+          <a class="brand" href="/"><img src="<?php echo base_url(); ?>static/images/logo.png" width="30px" height="20px">BugShark</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <?php if ( Core_Controller::logged_in() ) : ?>
@@ -14,8 +14,10 @@
 			<li><a href="<?php echo base_url(); ?>reports/">My Reports</a></li>
 			<li><a href="<?php echo base_url(); ?>user/logout">Logout</a></li>
 		<?php else: ?>
+			<li><a style="color: #FF0000;" href="<?php echo base_url(); ?>user/register">Register</a></li>
 			<li><a href="<?php echo base_url(); ?>user/login">Login</a></li>
-			<li><a style="color: #FF0000;" href="<?php echo base_url(); ?>user/register">Register</a></li><?php endif; ?>
+			<li><a href="<?php echo base_url(); ?>about">About</a></li>
+			<?php endif; ?>
               <li class="active"><a href="/">Home</a></li>
               </li>
             </ul>
