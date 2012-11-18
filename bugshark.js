@@ -86,7 +86,7 @@ BugShark.views.ToolBar = Backbone.View.extend({
     collapsedWidth: 0,
     collapsedHeight: 0,
     expandedWidth: 200,
-    expandedHeight: 240,
+    expandedHeight: 260,
     expanded: false,
 
     events: {
@@ -186,6 +186,8 @@ BugShark.views.ToolBar = Backbone.View.extend({
                 document.body.appendChild(form)
                 form.submit()
 
+                // Reset everything
+                BugShark.overlay.hide()
                 el.find('textarea').val('')
                 el.find('.message').text('Thank you! Your feedback is appreciated.').fadeIn().delay(3000).fadeOut()
             }
@@ -210,13 +212,17 @@ BugShark.views.Overlay = Backbone.View.extend({
         this.$el.show()
         this.displayed = true
         this._resize()
+        var self = this
         this.$el.Jcrop({
             allowResize: false,
             allowMove: false
+        }, function() {
+            self.jCrop = this
         })
     },
     hide: function() {
         this.$el.hide()
+        this.jCrop.destroy()
     },
 
     _resize: function() {
