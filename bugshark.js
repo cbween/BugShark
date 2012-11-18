@@ -177,7 +177,6 @@ BugShark.views.ToolBar = Backbone.View.extend({
         $(document.body).html2canvas({
             onrendered: function(canvas) {
                 var pngData = canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, '')
-                console.log(pngData)
                 screenshotInput.value = pngData
 
                 document.body.appendChild(form)
