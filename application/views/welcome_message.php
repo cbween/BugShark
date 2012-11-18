@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>BugShark</title>
     <!-- Le styles -->
+	<link href="<?php echo base_url(); ?>static/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>static/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
@@ -35,8 +36,7 @@
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
-              <li><a style="color: #FF0000;" href="#contact">Sign Up</a></li>
-              </li>
+			  <?php  $this->load->view('templates/navigation'); ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

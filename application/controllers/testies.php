@@ -16,23 +16,19 @@ class Testies extends Core_Controller {	// Remember to cup gently
 	
 	public function g($track_id = false)
 	{
-		if ( $this->input->is_ajax_request() ) {
-			if ( !$track_id ) { $this->_sendOut(array("error"=>"noid", "message"=>"No idea who you are.")); }
-			$site_settings = $this->site_model->getByTrack($track_id);
-			
-			$this->_sendOut($site_settings);
-		}
+		if ( !$track_id ) { $this->_sendOut(array("error"=>"noid", "message"=>"No idea who you are.")); }
+		$site_settings = $this->site_model->getByTrack($track_id);
+		
+		$this->_sendOut($site_settings);
 	}
 	
 	public function s()
 	{
-		if ( $this->input->is_ajax_request() ) {
-			$post = false;
-			$post = $this->input->post(null, true);
-			
-			$this->_validateInitial($post);
-			$this->bug_module->save($post);
-		}	
+		$post = false;
+		$post = $this->input->post(null, true);
+		
+		$this->_validateInitial($post);
+		$this->bug_module->save($post);
 	}
 	
 	private function _validateInitial($post = false)

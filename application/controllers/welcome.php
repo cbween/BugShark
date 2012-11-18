@@ -10,6 +10,6 @@ class Welcome extends Core_Controller {
 	public function index()
 	{
 
-		$this->render_view('welcome_message');
+		$this->load->view('welcome_message');
 	}
 }
