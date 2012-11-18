@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   	<script src="<?php echo base_url(); ?>static/js/bootstrap.min.js"></script>
-  	<script src="<?php echo base_url(); ?>static/js/jquery.js"></script>
+  	<script src="<?php echo base_url(); ?>static/js/vendor/jquery-1.8.2.min.js"></script>
   	<script src="<?php echo base_url(); ?>static/js/bootstrap-button.js"></script>
   	
     <meta charset="utf-8">
