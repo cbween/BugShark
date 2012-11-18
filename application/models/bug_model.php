@@ -16,7 +16,7 @@ class Bug_model extends Core_Model
 		
 		$insert = array(
 			"track_id"=>$form["track_id"],
-			"url"=>urlencode($form["url"]),
+			"url"=>$form["url"],
 			"type"=>$form["type"],
 			"comments"=>$form["comments"],
 			"screenshot"=>$form["screenshot"],
