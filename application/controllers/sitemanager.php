@@ -10,7 +10,7 @@ class Sitemanager extends Core_Controller {
 	public function index()
 	{
 		$this->data->sites = $this->site_model->listAccount();
-		$this->render_view('welcome_message');
+		$this->render_view('sites/list');
 	}
 	
 	public function details($id = false)

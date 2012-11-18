@@ -8,10 +8,7 @@ class Site_model extends Core_Model
 	
 	public function listAccount()
 	{
-		$this->data->user;
-	
-	
-		return true;
+		return $this->db->get_where('sites', array("user_id"=>$this->data->user->id))->result();	
 	}
 	
     public function get($id = false)
@@ -22,11 +19,6 @@ class Site_model extends Core_Model
 	public function getByTrack($track_id)
 	{
 		return $this->db->get_where("sites", array("track_id"=>$track_id))->row();
-	}
-	
-	public function get_where($where = array()) 
-	{
-	
 	}
 	
 	public function add($user_id = false, $form = array())
