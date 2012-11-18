@@ -9,11 +9,12 @@
         }
         if (params.bugshark == 'true') {
             var prefix = document.location.protocol == 'https:' ? 'https://' : 'http://'
-            document.write('<link rel="stylesheet" type="text/css" href="' + prefix + '127.0.0.1/bugshark.css"/>')
+            var dump = '<link rel="stylesheet" type="text/css" href="' + prefix + '127.0.0.1/bugshark.css"/>'
             var scripts = ['static/js/vendor/underscore', 'static/js/vendor/jquery-1.8.2.min', 'static/js/vendor/mustache', 'static/js/vendor/backbone', 'bugshark']
-            for (var i = 0; i < scripts.length; i++) {
-                document.write('<script type="text/javascript" src="' + prefix + '127.0.0.1/' + scripts[i] + '.js"></scri' + 'pt>')
+            for (var j = 0; j < scripts.length; j++) {
+                dump += '<script type="text/javascript" src="' + prefix + '127.0.0.1/' + scripts[i] + '.js"></scri' + 'pt>'
             }
+            document.write(dump)
         }
     })()
 </script>

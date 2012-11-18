@@ -1,13 +1,31 @@
 #bugshark-toolbar {
+    width: 100px;
+    height: 22px;
+    padding: 5px;
+
+    background: black;
+    color: white;
+    line-height: 1;
+
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 100px;
-    height: 24px;
-    background: black;
-    color: white;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#bugshark-toolbar .heading {
+    font-size: 18px;
+    padding: 2px 0 7px;
+    text-align: center;
+
+    cursor: pointer;
+    font-family: Arial, sans-serif;
 }
 
 #bugshark-toolbar .content {
-    display: none;
+}
+
+#bugshark-toolbar textarea {
+    width: 195px;
 }
