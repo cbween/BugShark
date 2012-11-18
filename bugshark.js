@@ -43,44 +43,31 @@ BugShark.utils = {
 
 
 /*
- * Contains the Backbone.js models
- */
-BugShark.models = {}
-
-BugShark.models.Feedback = Backbone.Model.extend({
-    //
-})
-
-
-BugShark.collections = {}
-
-
-/*
  * Not ideal, but it'll have to do for now
  */
 BugShark.templates = {
     toolbar:
         '<div id="bugshark-toolbar">' +
             '<div class="top">' +
-    '<a class="heading" href="#">Shark It!</a>' +
-    '</div>' +
-    '<div class="body">' +
-    '<div class="feedbackconter">' +
-        '<textarea class="feedback" placeholder="type here."></textarea>' +
-    '</div>' +
-            '<ul>' +
-            '<li class="tools">' +
-            '<p class="title">Tools:</p>' +
-            '<ul>' +
-            '<li><a class="tool highlight" href="#"><span class="icon-hl"></span> highlight</a></li>' +
-            '</ul>' +
-            '</li>' +
-            '</ul>' +
-    '<div>' +
-        '<input class="submit" type="submit" value="Send Feedback" />' +
-    '</div>' +
-'</div>' +
-'</div>',
+                '<a class="heading" href="#">Shark It!</a>' +
+            '</div>' +
+            '<div class="body">' +
+                '<div class="feedbackconter">' +
+                    '<textarea class="feedback" placeholder="Enter your feedback here"></textarea>' +
+                    '<input class="email" type="text" placeholder="Your email (optional)"/>' +
+                '</div>' +
+                '<ul>' +
+                    '<li class="tools">' +
+                        '<ul>' +
+                            '<li><a class="tool highlight" href="#"><span class="icon-hl"></span> highlight</a></li>' +
+                        '</ul>' +
+                    '</li>' +
+                '</ul>' +
+                '<div>' +
+                    '<input class="submit" type="submit" value="Send Feedback" />' +
+                '</div>' +
+            '</div>' +
+        '</div>',
 
     overlay:
         '<div id="bugshark-overlay"></div>'
@@ -90,7 +77,7 @@ BugShark.templates = {
 BugShark.views = {}
 
 BugShark.views.ToolBar = Backbone.View.extend({
-    collapsedBottom: -300,
+    collapsedBottom: -295,
     expandedBottom: 0,
     expanded: false,
 
@@ -122,7 +109,9 @@ BugShark.views.ToolBar = Backbone.View.extend({
     submit: function() {
         var data = {
             comments: this.$el.find('.feedback').val(),
-            track_id: BugShark.track_id
+            track_id: BugShark.track_id,
+            url: location.href,
+            email: this.$el.find('.email').val()
         }
         this._sendFeedback(data)
     },
@@ -157,8 +146,6 @@ BugShark.views.ToolBar = Backbone.View.extend({
 
     _sendFeedback: function(data) {
         // http://stackoverflow.com/a/6169703/104184
-
-        data['url'] = location.href
 
         var iframe = document.createElement('iframe')
         var name = 'secretForm'
