@@ -1,0 +1,70 @@
+<link href="/bugshark_template_css.css" rel="stylesheet">
+
+
+<div id="bugshark-container">
+	<div id="top">
+		<a href="#">Shark It!</a>
+	</div>
+	<div id="bugshark-body">
+		<form>
+			<div class="feedbackconter">
+				<textarea placeholder="type here."></textarea>
+			</div>
+			<ul>
+				<li>
+					<p class="title">Categories:</p>
+					<ul>
+						<li>
+							<label for="bugs">bugs</label>
+							<input type="checkbox" value="bugs" name="bugs" />
+						</li>
+						<li>
+							<label for="feedback">feedback</label>
+							<input type="checkbox" value="feedback" name="feedback" />
+						</li>
+						<li>
+							<label for="security">security</label>
+							<input type="checkbox" value="security" name="security" />
+						</li>
+						<li>
+							<label for="other">other</label>
+							<input type="checkbox" value="other" name="other" />
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p class="title">Tools:</p>
+					<ul>
+						<li>
+							<a href="#"><span class="icon-hl"></span> highlight</a>
+						</li>
+						<li>
+							<a href="#"><span class="icon-hl"></span> redact</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div>
+				<input id="submit" type="submit" value="submit" />
+			</div>
+		</form>
+	</div>
+</div>
+<script src="/static/js/vendor/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$('#bugshark-container #top').click(function() {
+		
+		var container = $(this).closest("#bugshark-container");
+		if ( rmpx($(container).css('bottom')) == 0 ) {
+			$(container).animate({"bottom":"-379px"}, 500);
+		} else {
+			$(container).animate({"bottom":"0px"}, 500);
+		}
+	});
+	
+	function rmpx(asdas) {
+		return parseInt(asdas.replace("px", ""));
+	}
+
+
+</script>
