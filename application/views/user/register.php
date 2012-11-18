@@ -1,4 +1,5 @@
 <link src="<?php echo base_url(); ?>static/css/bootstrap.css" rel="stylesheet">
+<h3>Sign up for a BugShark account here and ever use email for QC again.</h3>
 <form action="<?php echo current_url(); ?>" method="post" class="form">
 	<div class="formRow">
 		<label>Username</label>

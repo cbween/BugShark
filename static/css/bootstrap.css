@@ -779,19 +779,19 @@
 .navbar .brand {
   float: left;
   display: block;
-  padding: -5px 40px 15px;
-  margin-left: -20px;
+  margin-left: 20px;
   font-size: 22px;
   font-weight: 300;
   color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 #ffffff;
+  margin-top: -3px;
 }
 .navbar .brand:hover {
   text-decoration: none;
 }
 .navbar-text {
-  margin-bottom: 0;
+  margin-bottom: 5;
   line-height: 40px;
 }
 .navbar-link {
@@ -1112,10 +1112,10 @@
 }
 .navbar-inverse .brand,
 .navbar-inverse .nav > li > a {
-  color: #999999;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  padding-top: 14px;
-  padding-bottom: 8px;
+	color: #999;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	padding-top: 16px;
+	padding-bottom: 5px;
 }
 .navbar-inverse .brand:hover,
 .navbar-inverse .nav > li > a:hover {

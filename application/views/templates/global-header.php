@@ -5,6 +5,9 @@
     <title>BugShark</title>
     <!-- Le styles -->
     <link href="<?php echo base_url(); ?>static/css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" 
+      type="image/png" 
+      href="<?php echo base_url(); ?>static/images/favicon.ico">
     <style type="text/css">
       body {
         padding-top: 60px;
