@@ -1,6 +1,7 @@
       <div class="row">
         <a name="more">
         <br>
+        <br>
         <div class="span4">
           <h2>Simple feedback tools</h2>
           <p>Bug Shark’s markup tools allow Sharks (experts) to visually communicate the bugs found on your website to your developers, UX team, and content editors. Interactive drawing & text tools save your team from decoding bug reports, sifting through countless feedback emails, and the frustration of re-creating reported bugs.</p>

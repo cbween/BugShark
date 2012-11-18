@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/"><img src="<?php echo base_url(); ?>static/images/logo.png" width="20px" height="20px">BugShark</a>
+          <a class="brand" href="/">BugShark</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <?php if ( Core_Controller::logged_in() ) : ?>
