@@ -12,6 +12,11 @@
 </script>
 <script src="<?php echo base_url(); ?>static/js/main.js"></script>
 <!-- Example row of columns -->
+<script type="text/javascript">
+    $('#video-play').click(function() {
+        $(this).replaceWith('<iframe src="http://player.vimeo.com/video/53805056" width="600" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>')
+    })
+</script>
   <script type="text/javascript">
 (function() {
             var prefix = document.location.protocol == 'https:' ? 'https://' : 'http://'

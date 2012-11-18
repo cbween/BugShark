@@ -1278,3 +1278,11 @@
     border: 1px solid #000;
 }
 
+#video-play {
+    width: 350px;
+    height: 350px;
+    margin: 0 125px;
+    cursor: pointer;
+    background: url(/static/images/play.png) no-repeat;
+    background-size: contain;
+}
