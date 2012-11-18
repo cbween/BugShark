@@ -1,6 +1,6 @@
 <h1><?php echo $site->title; ?></h1>
 <small><?php echo $site->url; ?></small>
-<p><span class="bold">Nice!</span> now its time to install bugshark on your website. If you have a developer, now is the time to call them over; if not don't fear we will show you how.</p>
+<p><span class="bold">Nice!</span> Now its time to install bugshark on your website. If you have a developer, now is the time to call them over; if not don't fear we will show you how.</p>
 <p>Please paste the following just before the <span class="bold"><?php echo htmlspecialchars("</body>"); ?></span> tag</p>
 <textarea id="snippet">
 <script type="text/javascript">
