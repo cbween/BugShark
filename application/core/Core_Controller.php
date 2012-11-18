@@ -17,6 +17,16 @@ class Core_Controller extends CI_Controller
 		$this->load->view('templates/foot', $this->data);
     }
 
+	protected function render_home($head, $view)
+	{
+		$this->data->home_view = $head;
+		
+		// Load us up the views
+		$this->load->view('templates/head-home', $this->data);
+		$this->load->view($view, $this->data);
+		$this->load->view('templates/foot', $this->data);
+	}
+
 	public function logged_in()
 	{
 		return $this->user_model->is_logged_in();
