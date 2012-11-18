@@ -9,7 +9,6 @@ class Welcome extends Core_Controller {
 	
 	public function index()
 	{
-
-		$this->load->view('welcome_message');
+		$this->render_home('home-head', 'home');
 	}
 }

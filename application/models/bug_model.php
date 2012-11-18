@@ -15,7 +15,7 @@ class Bug_model extends Core_Model
 			"url"=>urlencode($form["url"]),
 			"type"=>$form["type"],
 			"comments"=>$form["comments"],
-			"log"=>json_encode($form["blob"])
+			"log"=>json_encode($form["log"])
 		);
 		
 		return $this->db->insert("bugs", $insert);
