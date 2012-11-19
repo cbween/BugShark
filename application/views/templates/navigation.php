@@ -13,7 +13,7 @@
 			<li><a href="<?php echo base_url(); ?>sitemanager/">My Sites</a></li>
 			<li><a href="<?php echo base_url(); ?>user/logout">Logout</a></li>
 		<?php else: ?>
-			<li><a class="reg" href="<?php echo base_url(); ?>user/register">Register</a></li>
+			<li><a class="reg" style="color:#FF0000" href="<?php echo base_url(); ?>user/register">Sign Up</a></li>
 			<li><a href="<?php echo base_url(); ?>user/login">Login</a></li>
 			<li><a href="<?php echo base_url(); ?>about">About</a></li>
 			<?php endif; ?>
