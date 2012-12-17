@@ -26,5 +26,5 @@
           <h2>Sharks</h2>
           <p>Our unique community of crowdsourced Sharks are able to build their reputation and earn a portion of the bounty. This keeps them incentivized to come back for more.</p>
         </div>
-        <p><a href="#" style="text-align:center;" class="btn btn-primary">Go Back Up</a></p>
+        <p><a href="#" class="btn btn-primary">Go Back Up</a></p>
 
